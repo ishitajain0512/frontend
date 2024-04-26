@@ -1,0 +1,157 @@
+<div className="my-container">
+    <h1>Disease Prediction Tool</h1>
+
+    <form id="symptom-form">
+        <div className="checkbox-group">
+            <div className = "symptoms box">
+                <h2>General Symptoms</h2>
+                <label></label><input type="checkbox" name="symptom" value="itching" onChange={handleCheckboxChange}/> Itching</label></label>
+            <label></label><input  onChange={handleCheckboxChange}  type="checkbox" name="symptom" value="skin_rash" /> Skin rash</label></label>
+            <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="nodal_skin_eruptions"/> Nodal skin eruptions</label></label>
+            <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="continuous_sneezing"/> Continuous sneezing</label></label>
+            <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="shivering"/> Shivering</label></label>
+            <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="chills"/> Chills</label></label>
+            <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="joint_pain"/> Joint pain</label></label>
+            <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="stomach_pain"/> Stomach pain</label></label>
+            <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="acidity"/> Acidity</label></label>
+            <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="ulcers_on_tongue"/> Ulcers on tongue</label></label>
+            <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="muscle_wasting"/> Muscle wasting</label></label>
+            <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="vomiting"/> Vomiting</label></label>
+            <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="burning_micturition"/> Burning micturition</label></label>
+            <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="spotting_urination"/> Spotting urination</label></label>
+            <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="fatigue"/> Fatigue</label></label>
+            <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="weight_gain"/> Weight gain</label></label>
+            <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="anxiety"/> Anxiety</label></label>
+            <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="cold_hands_and_feets"/> Cold hands and feet</label></label>
+            <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="mood_swings"/> Mood swings</label></label>
+            <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="weight_loss"/> Weight loss</label></label>
+            <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="restlessness"/> Restlessness</label></label>
+            <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="lethargy"/> Lethargy</label></label>
+            <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="patches_in_throat"/> Patches in throat</label></label>
+            <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="irregular_sugar_level"/> Irregular sugar level</label></label>
+            </div>
+           <div className = "symptoms box">
+                <h2>Respiratory Symptoms</h2>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="cough"/> Cough</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="high_fever"/> High fever</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="sunken_eyes"/> Sunken eyes</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="breathlessness"/> Breathlessness</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="sweating"/> Sweating</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="dehydration"/> Dehydration</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="indigestion"/> Indigestion</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="headache"/> Headache</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="yellowish_skin"/> Yellowish skin</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="dark_urine"/> Dark urine</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="nausea"/> Nausea</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="loss_of_appetite"/> Loss of appetite</label></label>
+           </div>
+            <div className = "symptoms-box">
+                <h2>Gastrointestinal Symptoms</h2>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="pain_behind_the_eyes"/> Pain behind the eyes</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="back_pain"/> Back pain</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="constipation"/> Constipation</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="abdominal_pain"/> Abdominal pain</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="diarrhoea"/> Diarrhoea</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="mild_fever"/> Mild fever</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="yellow_urine"/> Yellow urine</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="yellowing_of_eyes"/> Yellowing of eyes</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="acute_liver_failure"/> Acute liver failure</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="fluid_overload"/> Fluid overload</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="swelling_of_stomach"/> Swelling of stomach</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="swelled_lymph_nodes"/> Swelled lymph nodes</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="malaise"/> Malaise</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="blurred_and_distorted_vision"/> Blurred and distorted vision</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="phlegm"/> Phlegm</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="throat_irritation"/> Throat irritation</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="redness_of_eyes"/> Redness of eyes</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="sinus_pressure"/> Sinus pressure</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="runny_nose"/> Runny nose</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="congestion"/> Congestion</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="chest_pain"/> Chest pain</label></label>
+            </div>
+            <div className = "symptoms-box">
+                <h2>Musculoskeletal Symptoms</h2>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="weakness_in_limbs"/> Weakness in limbs</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="fast_heart_rate"/> Fast heart rate</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="pain_during_bowel_movements"/> Pain during bowel movements</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="pain_in_anal_region"/> Pain in anal region</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="bloody_stool"/> Bloody stool</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="irritation_in_anus"/> Irritation in anus</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="neck_pain"/> Neck pain</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="dizziness"/> Dizziness</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="cramps"/> Cramps</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="bruising"/> Bruising</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="obesity"/> Obesity</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="swollen_legs"/> Swollen legs</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="swollen_blood_vessels"/> Swollen blood vessels</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="puffy_face_and_eyes"/> Puffy face and eyes</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="enlarged_thyroid"/> Enlarged thyroid</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="brittle_nails"/> Brittle nails</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="swollen_extremeties"/> Swollen extremities</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="excessive_hunger"/> Excessive hunger</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="extra_marital_contacts"/> Extra marital contacts</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="drying_and_tingling_lips"/> Drying and tingling lips</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="slurred_speech"/> Slurred speech</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="knee_pain"/> Knee pain</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="hip_joint_pain"/> Hip joint pain</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="muscle_weakness"/> Muscle weakness</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="stiff_neck"/> Stiff neck</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="swelling_joints"/> Swelling joints</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="movement_stiffness"/> Movement stiffness</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="spinning_movements"/> Spinning movements</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="loss_of_balance"/> Loss of balance</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="unsteadiness"/> Unsteadiness</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="weakness_of_one_body_side"/> Weakness of one body side</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="loss_of_smell"/> Loss of smell</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="bladder_discomfort"/> Bladder discomfort</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="foul_smell_of_urine"/> Foul smell of urine</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="continuous_feel_of_urine"/> Continuous feel of urine</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="passage_of_gases"/> Passage of gases</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="internal_itching"/> Internal itching</label></label>
+          
+            </div>
+            <div className="symptoms-box">
+                <h2>Other Symptoms</h2>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="toxic_look_(typhos)"/> Toxic look (typhos)</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="depression"/> Depression</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="irritability"/> Irritability</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="muscle_pain"/> Muscle pain</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="altered_sensorium"/> Altered sensorium</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="red_spots_over_body"/> Red spots over body</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="belly_pain"/> Belly pain</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="abnormal_menstruation"/> Abnormal menstruation</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="dischromic_patches"/> Dischromic patches</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="watering_from_eyes"/> Watering from eyes</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="increased_appetite"/> Increased appetite</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="polyuria"/> Polyuria</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="family_history"/> Family history</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="mucoid_sputum"/> Mucoid sputum</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="rusty_sputum"/> Rusty sputum</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="lack_of_concentration"/> Lack of concentration</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="visual_disturbances"/> Visual disturbances</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="receiving_blood_transfusion"/> Receiving blood transfusion</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="receiving_unsterile_injections"/> Receiving unsterile injections</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="coma"/> Coma</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="stomach_bleeding"/> Stomach bleeding</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="distention_of_abdomen"/> Distention of abdomen</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="history_of_alcohol_consumption"/> History of alcohol consumption</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="fluid_overload"/> Fluid overload</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="blood_in_sputum"/> Blood in sputum</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="prominent_veins_on_calf"/> Prominent veins on calf</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="palpitations"/> Palpitations</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="painful_walking"/> Painful walking</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="pus_filled_pimples"/> Pus-filled pimples</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="blackheads"/> Blackheads</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="scurring"/> Scurring</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="skin_peeling"/> Skin peeling</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="silver_like_dusting"/> Silver-like dusting</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="small_dents_in_nails"/> Small dents in nails</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="inflammatory_nails"/> Inflammatory nails</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="blister"/> Blister</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="red_sore_around_nose"/> Red sore around nose</label></label>
+                <label></label><input  onChange={handleCheckboxChange} type="checkbox" name="symptom" value="yellow_crust_ooze"/> Yellow crust ooze</label></label>
+            </div>
+        </div>
+        <button onClick={handleSubmit} type="submit" className="btn-submit">Submit</button>
+    </form>
+</div>
