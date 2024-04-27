@@ -5,7 +5,51 @@ import React, { useState } from "react";
 
 const CheckBox = () => {
     const [checkedSymptoms, setCheckedSymptoms] = useState([]);
+    const [responseData, setResponseData] = useState(null);
 
+
+    const ResponseModal = ({ disease, description, precautions, medications, diet, workout, onClose }) => {
+        const stringWithDoubleQuotes = precautions.replace(/'/g, '"');
+        precautions = JSON.parse(stringWithDoubleQuotes);
+        return (
+            <div className="modal">
+                <div className="modal-content">
+                    <span className="close" onClick={onClose}>&times;</span>
+                    <h2>Diagnosed Disease: {disease}</h2>
+                    <h3>{description}</h3>
+                    <div className="details">
+                        <h3>Precautions</h3>
+                        <ul>
+                            {precautions && precautions.map((item, index) => (
+                                <li key={index}>{item}</li>
+                            ))}
+                        </ul>
+                        <h3>Medications</h3>
+                        <ul>
+                            {medications && medications.map((item, index) => (
+                                <li key={index}>{item}</li>
+                            ))}
+                        </ul>
+                        <h3>Preferred Diet</h3>
+                        <ul>
+                            {diet && diet.map((item, index) => (
+                                <li key={index}>{item}</li>
+                            ))}
+                        </ul>
+                        <h3>Workout</h3>
+                        <ul>
+                            {workout && workout.map((item, index) => (
+                                <li key={index}>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        );
+    };
+    
+    
+    
     const handleCheckboxChange = (event) => {
         const { value, checked } = event.target;
         // Log the value to check its validity
@@ -23,29 +67,41 @@ const CheckBox = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         console.log(JSON.stringify(checkedSymptoms));
-        console.log("ishita");
+        const data = {
+            symptoms : checkedSymptoms
+        };
+
+        // const responsedata = {"disease": "Acne", "description": "Acne is a skin condition that occurs when hair follicles become clogged with oil and dead skin cells.", "precautions": ["bath twice", "avoid fatty spicy food", "drink plenty of water", "avoid too many products"], "medications": ["Antibiotics", "Pain relievers", "Antihistamines", "Corticosteroids", "Topical treatments"],
+        // "diet": ["Acne Diet", "Low-Glycemic Diet", "Hydration", "Fruits and vegetables", "Probiotics"], "workout": ["Consume a balanced diet", "Limit dairy and high-glycemic foods", "Include antioxidants", "Stay hydrated", "Limit processed foods", "Include zinc-rich foods", "Consult a skincare professional", "Practice good skincare hygiene", "Limit sugary foods andbeverages", "Follow medical recommendations"]};
+        // setResponseData(responsedata);
+
         try {
             const response = await fetch('https://disease-prediction-and-diagnosis-machine.onrender.com/predict', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(checkedSymptoms)
+                body: JSON.stringify(data)
             });
     
             if (!response.ok) {
                 throw new Error('Failed to send data to the server');
             }
             const responseData = await response.json();
+            setResponseData(responseData);
             console.log('Response from server:', responseData);
         } catch (error) {
             console.error('Error:', error);
         }
     };
+    const handleCloseModal = () => {
+        setResponseData(null);
+    };
   return (
     
       <div className="my-container">
-                <h1>Disease Prediction Tool</h1>
+                <h1>Disease Prediction and Diagnosis Tool</h1>
+                <h3>Simply select all the symptoms you are experiencing and click the "Submit" button.</h3>
                 <form id="symptom-form">
         <div className="checkbox-group">
             <div className="symptoms box">
@@ -91,7 +147,7 @@ const CheckBox = () => {
                 <label><input type="checkbox" name="symptom" value="loss_of_appetite" onChange={handleCheckboxChange}/> Loss of appetite</label>
                 
             </div>
-            <div className="symptoms-box">
+            <div className="symptoms box">
                 <h2>Gastrointestinal Symptoms</h2>
                 <label><input type="checkbox" name="symptom" value="pain_behind_the_eyes" onChange={handleCheckboxChange}/> Pain behind the eyes</label>
                 <label><input type="checkbox" name="symptom" value="back_pain" onChange={handleCheckboxChange}/> Back pain</label>
@@ -108,7 +164,7 @@ const CheckBox = () => {
                 <label><input type="checkbox" name="symptom" value="phlegm" onChange={handleCheckboxChange}/> Phlegm</label>
                 
             </div>
-            <div className="symptoms-box">
+            <div className="symptoms box">
                 <h2>Musculoskeletal Symptoms</h2>
                 <label><input type="checkbox" name="symptom" value="throat_irritation" onChange={handleCheckboxChange}/> Throat irritation</label>
                 <label><input type="checkbox" name="symptom" value="redness_of_eyes" onChange={handleCheckboxChange}/> Redness of eyes</label>
@@ -125,7 +181,7 @@ const CheckBox = () => {
                 <label><input type="checkbox" name="symptom" value="seizure" onChange={handleCheckboxChange}/> Seizure</label>
                
             </div>
-            <div className="symptoms-box">
+            <div className="symptoms box">
                 <h2>Other Symptoms</h2>
                 <label><input type="checkbox" name="symptom" value="blood_in_sputum" onChange={handleCheckboxChange}/> Blood in sputum</label>
                 <label><input type="checkbox" name="symptom" value="prominent_veins_on_calf" onChange={handleCheckboxChange}/> Prominent veins on calf</label>
@@ -146,6 +202,17 @@ const CheckBox = () => {
         </div>
         <button onClick={handleSubmit} type="submit" className="btn-submit">Submit</button>
     </form>
+    {responseData && (
+                <ResponseModal 
+                    disease={responseData.disease}
+                    description = {responseData.description}
+                    precautions = {responseData.precautions}
+                    medications = {responseData.medications}
+                    diet={responseData.diet}
+                    workout={responseData.workout}
+                    onClose={handleCloseModal}
+                />
+            )}
             </div>
     
   );

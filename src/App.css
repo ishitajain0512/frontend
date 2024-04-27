@@ -1,6 +1,13 @@
 .App {
   text-align: center;
 }
+body {
+  font-family: "Montserrat", sans-serif;
+  background-image: url('https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+  background-size: cover; /* Cover the entire background */
+  background-repeat: no-repeat; /* Do not repeat the background image */
+  background-position: center; /* Center the background image */
+}
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +42,188 @@
   to {
     transform: rotate(360deg);
   }
+}
+.nav-ul li:hover {
+  transform: scale(1.1); /* Adjust the scale factor as needed */
+}
+
+.nav-ul {
+  padding: 5px;
+  margin: 0;
+  background-color:black;
+}
+.nav-ul li a {
+  color: white;
+  padding: 5;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: transform 0.3s ease-in-out;
+}
+.nav-ul li {
+  display: inline-block;
+  padding: 10px;
+}
+.nav-right {
+  text-align: right;
+}
+
+.btn-submit {
+  padding: 10px 20px;
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 150px;
+}
+
+.btn-submit:hover {
+  background-color: #0056b3;
+}
+
+.modal {
+  position: fixed;
+  width: 90%;
+  height: 90%;
+  top: 50px;
+  right: 55px;
+  background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background */
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center the modal vertically */
+}
+
+.modal-content h2,
+.modal-content h3 {
+  border-top: 1px solid black; /* Add underline to headings */
+  border-bottom: 1px solid black; /* Add underline to headings */
+  padding-bottom: 5px; /* Add some space between text and underline */
+  margin-bottom: 10px; /* Add space below headings */
+}
+
+.modal-content {
+  background-color: #fff;
+  background-size: cover;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  height: 80%;
+  overflow-y: auto; /* Add scrollbar if content exceeds modal height */
+}
+.close {
+  position: absolute;
+  top: 10px; 
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+}
+
+.details {
+  margin-top: 20px;
+}
+
+.details h3 {
+  margin-bottom: 10px;
+}
+
+.details ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.details ul li {
+  margin-bottom: 5px;
+}
+
+.details ul li:before {
+  content: "\2022";
+  color: #333;
+  font-size: 14px;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+
+/* .my-container {
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+.symptoms {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-right: 10px; 
+  margin-left: 10px; 
+  margin-bottom: 20px;
+}
+
+.symptoms h2 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.symptoms label {
+  margin-right: 15px; /* Adds space after each label */
+}
+.symptoms label input[type="checkbox"] {
+  margin-right: 10px;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
+}
+
+.symptoms label input[type="checkbox"]:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  border-radius: 2px;
+  border: 2px solid #fff;
+  transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.symptoms label input[type="checkbox"]:checked:before {
+  background-color :black;
+  transform: translate(-50%, -50%) scale(1);
+  border-color: #007bff;
+}
+
+
+.footer {
+  height: 350px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  margin-top: 360px;
+  clear: both;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
 }
