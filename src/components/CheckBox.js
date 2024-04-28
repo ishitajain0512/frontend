@@ -7,121 +7,84 @@ import Loader from "./Loader";
 const CheckBox = () => {
     const [checkedSymptoms, setCheckedSymptoms] = useState([]);
     const [responseData, setResponseData] = useState(null);
-    const [loading, setLoading] = useState(true);
 
-    // const ResponseModal = ({ disease, description, precautions, medications, diet, workout, onClose }) => {
-    //     return (
-    //         <div className="modal">
-    //             <div className="modal-content">
-    //                 <span className="close" onClick={onClose}>&times;</span>
-    //                 <h2>Diagnosed Disease: {disease}</h2>
-    //                 <h3>{description}</h3>
-    //                 <div className="details">
-    //                     <h3>Precautions</h3>
-    //                     <ul>
-    //                         {precautions && precautions.map((item, index) => (
-    //                             <li key={index}>{item}</li>
-    //                         ))}
-    //                     </ul>
-    //                     <h3>Medications</h3>
-    //                     <ul>
-    //                         {medications && medications.map((item, index) => (
-    //                             <li key={index}>{item}</li>
-    //                         ))}
-    //                     </ul>
-    //                     <h3>Preferred Diet</h3>
-    //                     <ul>
-    //                         {diet && diet.map((item, index) => (
-    //                             <li key={index}>{item}</li>
-    //                         ))}
-    //                     </ul>
-    //                     <h3>Workout</h3>
-    //                     <ul>
-    //                         {workout && workout.map((item, index) => (
-    //                             <li key={index}>{item}</li>
-    //                         ))}
-    //                     </ul>
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     );
-    // };
     
     const ResponseModal = ({ disease, description, precautions, medications, diet, workout, onClose }) => {
         const [showLoader, setShowLoader] = useState(true);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowLoader(false);
-        }, 1500);
-
-        return () => clearTimeout(timer);
-    }, []); 
-    return (
-        <div className="modal">
-        <div className="modal-content">
-            {showLoader ? (
-               <Loader/>
-            ) : (
-                
-                <div className="card">
-                    <div className="card-header">
-                        <span className="close" onClick={onClose}>&times;</span>
-                        <h2 className="disease-heading">Diagnosed Disease: {disease}</h2>
-                        <h3 className="description">{description}</h3>
-                    </div>
-                    <div className="card-body">
-                        <div className="details">
-                            <div className="precautions">
-                                <h3>Precautions</h3>
-                                <ul>
-                                    {precautions && precautions.map((item, index) => (
-                                        <li key={index}>{item}</li>
-                                    ))}
-                                </ul>
+    
+        useEffect(() => {
+            const timer = setTimeout(() => {
+                setShowLoader(false);
+            }, 1000);
+    
+            return () => clearTimeout(timer);
+        }, []);
+    
+        return (
+            <div className="modal-wrapper">
+                <div className="backdrop"></div>
+                <div className="modal">
+                    <div className="modal-content">
+                        {showLoader ? (
+                            <Loader />
+                        ) : (
+                            <div className="card">
+                                <div className="card-header">
+                                    <span className="close" onClick={onClose}>&times;</span>
+                                    <h2 className="disease-heading">Diagnosed Disease: {disease}</h2>
+                                    <h3 className="description">{description}</h3>
+                                </div>
+                                <div className="card-body">
+                                    <div className="details">
+                                        <div className="precautions">
+                                            <h3>Precautions</h3>
+                                            <ul>
+                                                {precautions && precautions.map((item, index) => (
+                                                    <li key={index}>{item}</li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                        <div className="medications">
+                                            <h3>Medications</h3>
+                                            <ul>
+                                                {medications && medications.map((item, index) => (
+                                                    <li key={index}>{item}</li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                        <div className="diet">
+                                            <h3>Preferred Diet</h3>
+                                            <ul>
+                                                {diet && diet.map((item, index) => (
+                                                    <li key={index}>{item}</li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                        <div className="workout">
+                                            <h3>Workout</h3>
+                                            <ul>
+                                                {workout && workout.map((item, index) => (
+                                                    <li key={index}>{item}</li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="medications">
-                                <h3>Medications</h3>
-                                <ul>
-                                    {medications && medications.map((item, index) => (
-                                        <li key={index}>{item}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="diet">
-                                <h3>Preferred Diet</h3>
-                                <ul>
-                                    {diet && diet.map((item, index) => (
-                                        <li key={index}>{item}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="workout">
-                                <h3>Workout</h3>
-                                <ul>
-                                    {workout && workout.map((item, index) => (
-                                        <li key={index}>{item}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
+                        )}
                     </div>
                 </div>
-            )}
-        </div>
-        </div>
-    );
-};
+            </div>
+        );
+    };
+    
     
     
     const handleCheckboxChange = (event) => {
         const { value, checked } = event.target;
-        // Log the value to check its validity
         if (checked) {
-            // Convert value to string before adding it to the array
             setCheckedSymptoms([...checkedSymptoms, String(value)]);
         } else {
-            // Filter out the value as a string
             setCheckedSymptoms(checkedSymptoms.filter(symptom => symptom !== String(value)));
         }
         console.log(checkedSymptoms);
@@ -130,7 +93,10 @@ const CheckBox = () => {
     
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(JSON.stringify(checkedSymptoms));
+        if (checkedSymptoms.length === 0) {
+            window.alert('Please select at least one symptom.');
+            return; 
+        }
         const data = {
             symptoms : checkedSymptoms
         };
@@ -143,19 +109,23 @@ const CheckBox = () => {
                 },
                 body: JSON.stringify(data)
             });
-    
+        
             if (!response.ok) {
                 throw new Error('Failed to send data to the server');
             }
+        
             const responseData = await response.json();
             setResponseData(responseData);
             console.log('Response from server:', responseData);
         } catch (error) {
-            console.error('Error:', error);
+            window.alert('An error has occurred. Please try again later.');
+            window.location.reload();
         }
+        
     };
     const handleCloseModal = () => {
         setResponseData(null);
+        window.location.reload();
     };
   return (
     
