@@ -21,7 +21,7 @@ const Nav = () => {
          
         <ul className="nav-ul nav-right">
           <li>
-            M and I Diagnosis Services
+            A and I Diagnosis Services
           </li>
           <li>
             
