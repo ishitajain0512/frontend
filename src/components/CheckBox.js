@@ -102,7 +102,7 @@ const CheckBox = () => {
         };
 
         try {
-            const response = await fetch('https://disease-predicton-and-diagnosis-machine.onrender.com', {
+            const response = await fetch('https://disease-prediction-and-diagnosis-machine.onrender.com', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
